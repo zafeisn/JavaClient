@@ -1,3 +1,31 @@
+# 模型保存
+```python
+tf.saved_model.save(model, "D:/file/model/")
+
+assets #模型依赖的外部文件,比如vocab
+saved_model.pb #模型的网络结构,可以接受tensor输入,计算完后输出tensor
+# saved_model.pb或saved_model.pbtxt是SavedModel协议缓冲区。它将图形定义作为MetaGraphDef协议缓冲区。MetaGraph是一个数据流图，加上其相关的变量、assets和签名。MetaGraphDef是MetaGraph的Protocol Buffer表示
+variables #模型的参数
+```
+![image-20210815093020363](https://user-images.githubusercontent.com/59757696/129693357-98c3d4e5-af20-4c74-a818-68b48279df64.png)
+
+```shell
+// 查看模型
+saved_model_cli show --dir model_dir_path --all
+```
+![image-20210817155559578](https://user-images.githubusercontent.com/59757696/129693450-4c01a53f-85b8-48d4-ba14-b6f435bcdbfc.png)
+
+# 模型部署
+###### 1、安装docker
+###### 2、模型上传
+###### 3、docker部署
+```shell
+docker run -p 8501:8501  --mount type=bind,source=/home/linjie/model,target=/models/saved_model  -e MODEL_NAME=saved_model  -t tensorflow/serving &（RESTful API）
+    
+docker run -p 8500:8500  --mount type=bind,source=/home/linjie/model,target=/models/saved_model  -e MODEL_NAME=saved_model  -t tensorflow/serving &（gRPC）
+```
+![image-20210817155644162](https://user-images.githubusercontent.com/59757696/129693219-52b4c083-7f72-4767-b92e-411302873e1b.png)
+
 # JavaClient
 Use (gRPC) java client to call the model deployed by TensorFlow Serving
 #### Java客户端
@@ -499,4 +527,5 @@ public class TestClient {
     }
 }
 ```
-![image-20210817155153710](C:\Users\LinJie\AppData\Roaming\Typora\typora-user-images\image-20210817155153710.png)
+
+![image-20210817155153710](https://user-images.githubusercontent.com/59757696/129692887-ea771697-f959-451b-985a-a0a1204f597c.png)
