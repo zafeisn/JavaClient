@@ -31,7 +31,8 @@ Use (gRPC) java client to call the model deployed by TensorFlow Serving
 #### Java客户端
 
 ```xml
-（gRPC调用）若使用Java作为客户端，则需要编译proto文件 
+（gRPC调用）若使用Java作为客户端，则需要编译proto文件
+proto源文件和编译后的java文件地址：https://github.com/zafeisn/JavaClient-proto-java
 ```
 
 ###### 1、获取protobuf文件
