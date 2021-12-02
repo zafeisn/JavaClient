@@ -1,3 +1,6 @@
+# Another deployment method (RESTful) is simple
+[TensorFlow Serving Model Deployment for RESTful](https://github.com/zafeisn/JavaClientRESTful)
+
 # 模型保存
 ```python
 tf.saved_model.save(model, "D:/file/model/")
