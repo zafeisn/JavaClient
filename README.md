@@ -19,6 +19,7 @@ saved_model_cli show --dir model_dir_path --all
 ![image-20210817155559578](https://user-images.githubusercontent.com/59757696/129693450-4c01a53f-85b8-48d4-ba14-b6f435bcdbfc.png)
 
 # 模型部署
+[如何部署](https://blog.csdn.net/weixin_44324036/article/details/119761699?spm=1001.2014.3001.5501)
 ###### 1、安装docker
 ###### 2、模型上传
 ###### 3、docker部署
